@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cartly | Simple shopping</title>
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="./styles.css?v=2">
 </head>
 <body>
   <header class="site-header">
@@ -48,7 +48,7 @@
     </dialog>
 
     <section class="catalog-section" id="catalog">
-      <div class="section-heading"><div><p class="eyebrow">CATALOG</p><h2>Find your next favorite</h2></div><input id="product-search" class="search" placeholder="Search products" aria-label="Search products"></div>
+      <div class="section-heading"><div><p class="eyebrow">CATALOG</p><h2>Find your next favorite</h2></div><div class="catalog-controls"><input id="product-search" class="search" placeholder="Search products" aria-label="Search products"><label>Category<select id="category-filter" aria-label="Filter by category"><option value="">All categories</option></select></label><label>Sort<select id="catalog-sort" aria-label="Sort products"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="name">Name: A to Z</option></select></label></div></div>
       <div id="product-grid" class="product-grid" aria-live="polite"></div>
     </section>
 
@@ -67,6 +67,19 @@
       </div>
     </section>
   </main>
+
+  <dialog id="reviews-dialog" class="reviews-dialog">
+    <div class="dialog-heading"><div><p class="eyebrow">SHOPPER REVIEWS</p><h2 id="review-product-name">Product reviews</h2></div><button type="button" class="icon-button" data-close-reviews aria-label="Close reviews">×</button></div>
+    <div id="review-summary" class="review-summary" aria-live="polite"></div>
+    <div id="review-list" class="review-list" aria-live="polite"><p class="muted">Loading reviews…</p></div>
+    <form id="review-form" class="dialog-form review-form">
+      <h3>Write a review</h3>
+      <p id="review-account-message" class="muted"></p>
+      <label>Rating<select name="rating" required><option value="5">5 — Loved it</option><option value="4">4 — Liked it</option><option value="3">3 — It’s okay</option><option value="2">2 — Disliked it</option><option value="1">1 — Not for me</option></select></label>
+      <label>Comment <span class="muted">(optional)</span><textarea name="comment" rows="3" maxlength="1000" placeholder="What should other shoppers know?"></textarea></label>
+      <button id="submit-review" class="primary-button" type="submit">Submit review</button>
+    </form>
+  </dialog>
 
   <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart">
     <div class="drawer-heading"><div><p class="eyebrow">YOUR CART</p><h2>Ready when you are</h2></div><button id="close-cart" class="icon-button" type="button">×</button></div>

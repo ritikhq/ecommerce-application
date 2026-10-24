@@ -2,6 +2,8 @@
 
 A Spring Boot backend MVP for an e-commerce application. It supports user registration, catalog management, carts, checkout, orders, addresses, reviews, and mock payments.
 
+The bundled storefront is served from the application root. Shoppers can search, filter by category, and sort products, then read and submit product reviews using a selected account.
+
 ## Prerequisites
 
 - Java 21
